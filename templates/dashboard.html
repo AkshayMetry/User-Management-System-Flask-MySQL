@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Account</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">              
+</head>
+<body>
+<div class="container">
+	<br>
+	<div class="row">	
+		Hi : <strong>{{session.name}} | <a href="{{ url_for('logout') }}"> Logout</a> 
+	</div>
+	<br><br>
+	<div class="row">
+		<h2>Welcome to the user dashboard...</h2> 
+	</div>	  
+    <p>{{data}}</p>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                {%for item in data %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[2] }}</td>
+
+                </tr>
+                
+              {% endfor %}
+            </tbody>
+          </table>
+   
+
+</div>
+</body>
+</html>
