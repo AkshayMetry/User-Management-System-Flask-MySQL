@@ -15,14 +15,14 @@
 	<div class="row">
 		<h2>Welcome to the user dashboard...</h2> 
 	</div>	  
-    <p>{{data}}</p>
+    <!-- <p>{{data}}</p> -->
         <table class="table">
             <thead>
               <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
-                
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -31,7 +31,9 @@
                     <td>{{ item[0] }}</td>
                     <td>{{ item[1] }}</td>
                     <td>{{ item[2] }}</td>
-
+                    <td><a href="#" class="btn btn-warning">Edit</a>
+                      <a href="#" class="btn btn-danger">Delete</a>
+                    </td>
                 </tr>
                 
               {% endfor %}
